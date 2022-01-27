@@ -6,17 +6,17 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/navBarStyle.css}" href="../../static/css/navBarStyle.css">
     <title>NavBar</title>
 </head>
-<!--/*@thymesVar id="user" type="java.lang.String"*/-->
+<!--/*@thymesVar id="user" type="ussr.party.kabachki.partyportal.dto.User"*/-->
 <!--TODO!!-->
 <div class="navBar">
-    <p class="site-tag">Party of Cobachki <br/> Java edition</p>
+    <p class="site-tag">Party of Cobachki<br/>Java edition</p>
     <ul>
         <li><a class="active" th:href="@{/index.html}" href="#">Home</a></li>
         <li><a th:href="@{/initial-request/index.html}" href="#">Initial requests</a></li>
         <li><a>Contact</a></li>
 
         <li><a class="right" th:href="@{/about/index.html}" href="#">About</a></li>
-        <li><a class="right" th:href="@{/profile/index.html}" th:text="${user}" href="#">Profile</a></li>
+        <li><a class="right" th:href="@{/profile/index.html}" th:text="${user?.name}" href="#">Profile</a></li>
     </ul>
 </div>
 

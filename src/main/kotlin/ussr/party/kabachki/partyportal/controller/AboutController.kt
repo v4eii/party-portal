@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("/about")
 class AboutController(
     private val buildProperties: BuildProperties
-) : SessionAttributeController {
+) : SessionAttributeController{
 
     @RequestMapping(path = ["", "/", "index", "index.html"])
     fun aboutHandler(model: Model): String {
         model.addAttribute("buildInfo", buildProperties)
 
-        return "about/index"
+        return model.moveNextOrGoHome("about/index")
     }
 }
