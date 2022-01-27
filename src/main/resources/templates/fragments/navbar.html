@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navBarStyle.css}" href="../../static/css/navBarStyle.css">
+    <title>NavBar</title>
+</head>
+
+<body>
+<div class="navBar">
+    <p class="site-tag">Party of Cobachki <br/> Java edition</p>
+    <ul>
+        <li><a class="active" th:href="@{/index.html}" href="#">Home</a></li>
+        <li><a th:href="@{/initial-request/index.html}" href="#">Initial requests</a></li>
+        <li><a>Contact</a></li>
+
+        <li><a class="right" th:href="@{/about/index.html}" href="#">About</a></li>
+    </ul>
+</div>
+</body>
+
+</html>
