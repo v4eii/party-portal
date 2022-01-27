@@ -10,7 +10,7 @@
     </parent>
     <groupId>ussr.party.kabachki</groupId>
     <artifactId>party-portal</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>party-portal</name>
     <description>party-portal</description>
     <properties>

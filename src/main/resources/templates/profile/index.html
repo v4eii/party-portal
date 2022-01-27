@@ -5,12 +5,14 @@
     <title>Profile</title>
 </head>
 
-<!--/*@thymesVar id="user" type="org.springframework.boot.info.BuildProperties"*/ TODO!!-->
+<!--/*@thymesVar id="user" type="java.lang.String"*/-->
 
 <body>
 <div th:insert="@{/fragments/navbar}"></div>
 <div>
-    <h3 th:text="${user.name}">Username</h3>
+    <h3 th:text="${username}">Username</h3>
+    <h3 th:text="${role}">Role</h3>
+    <h3 th:text="${rice}">Rice</h3>
 </div>
 </body>
 </html>
