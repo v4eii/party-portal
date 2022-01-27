@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}" href="../../static/css/footer.css">
+</head>
+<!--/*@thymesVar id="buildInfo" type="org.springframework.boot.info.BuildProperties"*/-->
+<body>
+<div th:insert="@{/fragments/navbar}"></div>
+<div>
+    <h2 th:text="About">About</h2>
+    <table th:cellpadding="4" th:border="1">
+        <caption>Build info</caption>
+        <tr>
+            <th>name</th>
+            <td><a th:text="${buildInfo.name}">name</a></td>
+        </tr>
+        <tr>
+            <th>group</th>
+            <td><a th:text="${buildInfo.group}">group</a></td>
+        </tr>
+        <tr>
+            <th>artifact</th>
+            <td><a th:text="${buildInfo.artifact}">artifactId</a></td>
+        </tr>
+        <tr>
+            <th>version</th>
+            <td><a th:text="${buildInfo.version}">version</a></td>
+        </tr>
+        <tr>
+            <th>time</th>
+            <td><a th:text="${buildInfo.time}">time</a></td>
+        </tr>
+    </table>
+    
+</div>
+<footer>
+    Powered by Spring Framework <br/>
+    MIT © v4eii
+</footer>
+
+
+</body>
+</html>
