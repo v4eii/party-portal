@@ -1,0 +1,19 @@
+
+header {
+    min-height: 50px;
+    background: lightcyan;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    min-height: 50px;
+    background: PapayaWhip;
+    text-align: center;
+    margin-top: auto;
+}
