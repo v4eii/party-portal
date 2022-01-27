@@ -5,9 +5,11 @@
     <title>Request</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/inputField.css}" href="../../static/css/inputField.css">
 </head>
-<body>
-<div th:insert="~{/fragments/navbar}" class="row"></div>
+
 <!--/*@thymesVar id="initialRequest" type="ussr.party.kabachki.partyportal.dto.InitialRequestDTO"*/-->
+
+<body>
+<div th:insert="~{fragments/navbar}" class="row"></div>
 <div>
     <h2>Initial request</h2>
     <form th:object="${initialRequest}" method="post" action="new">
