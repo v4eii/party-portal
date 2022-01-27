@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+
+<!--/*@thymesVar id="user" type="org.springframework.boot.info.BuildProperties"*/ TODO!!-->
+
+<body>
+<div th:insert="@{/fragments/navbar}"></div>
+<div>
+    <h3 th:text="${user.name}">Username</h3>
+</div>
+</body>
+</html>

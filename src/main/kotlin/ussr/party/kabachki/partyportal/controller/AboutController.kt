@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 @RequestMapping("/about")
 class AboutController(
     private val buildProperties: BuildProperties
-) {
+) : SessionAttributeController {
 
     @RequestMapping(path = ["", "/", "index", "index.html"])
     fun aboutHandler(model: Model): String {
@@ -17,5 +17,4 @@ class AboutController(
 
         return "about/index"
     }
-
 }
