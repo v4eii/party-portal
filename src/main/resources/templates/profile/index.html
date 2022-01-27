@@ -8,7 +8,7 @@
 <!--/*@thymesVar id="user" type="java.lang.String"*/-->
 
 <body>
-<div th:insert="@{/fragments/navbar}"></div>
+<div th:insert="~{/fragments/navbar}"></div>
 <div>
     <h3 th:text="${username}">Username</h3>
     <h3 th:text="${role}">Role</h3>
