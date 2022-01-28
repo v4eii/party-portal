@@ -64,6 +64,13 @@
                     <span class="label">Height</span>
                 </div>
             </div>
+            <div class="card-about">
+                <div class="item">
+                    <span class="label">Email</span>
+                    <span th:if="${user.email == null}" th:text="'unknown email'" class="value"></span>
+                    <span th:unless="${user.email == null}" th:text="${user.email}" class="value"></span>
+                </div>
+            </div>
             <div class="skills">
                 <span th:if="${user.about == null}" th:text="'unknown about data'" class="value"></span>
                 <span th:unless="${user.about == null}" th:text="${user.about}" class="value"></span>
