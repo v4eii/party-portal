@@ -10,6 +10,12 @@
 <!--/*@thymesVar id="initialRequest" type="ussr.party.kabachki.partyportal.dto.InitialRequestDTO"*/-->
 <!--/*@thymesVar id="req" type="ussr.party.kabachki.partyportal.dto.InitialRequestDTO"*/-->
 
+<!--<script>-->
+<!--    function successCreated() {-->
+<!--        alert("request created")-->
+<!--    }-->
+<!--</script>-->
+
 <body>
 <div th:insert="~{fragments/navbar}" class="row"></div>
 <div>
@@ -23,7 +29,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn" type="submit" th:text="'Submit'"></button>
+                    <button id="btn" class="btn" onclick="successCreated()" type="submit" th:text="'Submit'"></button>
                 </div>
             </div>
         </form>
@@ -38,7 +44,7 @@
             <tr th:each="req : ${requests}">
                 <td th:text="${req.requestTitle}">title</td>
                 <td th:text="${req.initiator}">initiator</td>
-                <td class="last" th:text="${req.description}">asdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</td>
+                <td class="last" th:text="${req.description}">description</td>
             </tr>
         </table>
     </div>

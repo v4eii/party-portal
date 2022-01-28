@@ -5,10 +5,23 @@
     <title>WelCum CumRade</title>
 </head>
 
+<style th:inline="text">
+    div.main {
+        background-image: url([[@{/resources/images/soviet.jpg}]]);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 47px;
+    }
+</style>
+
 <body>
 <div th:insert="~{fragments/navbar}"></div>
-<div>
-    <img class="img-soviet" th:src="@{/resources/images/soviet.jpg}" src="../static/resources/images/soviet.jpg"/>
+<div class="main">
 </div>
 </body>
 </html>

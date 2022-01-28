@@ -2,6 +2,7 @@ package ussr.party.kabachki.partyportal.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -10,6 +11,7 @@ import ussr.party.kabachki.partyportal.dto.User
 import ussr.party.kabachki.partyportal.service.InitialRequestService
 import ussr.party.kabachki.partyportal.service.UserService
 
+@Validated
 @Controller
 @RequestMapping("/initial-request")
 class InitialRequestController(
