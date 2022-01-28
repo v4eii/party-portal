@@ -9,14 +9,14 @@ data class User(
     @NotBlank
     val name: String,
     @Email(message = "email should be valid")
-    val email: String?,
+    var email: String?,
     @PositiveOrZero
-    val rice: Long,
+    var rice: Long,
     val role: String,
     @Min(12)
-    val age: Int,
-    val weight: Int?,
-    val height: Int?,
-    val about: String?,
-    val password: String? = null
+    var age: Int,
+    var weight: Int?,
+    var height: Int?,
+    var about: String?,
+    var password: String? = null
 )

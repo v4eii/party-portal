@@ -70,6 +70,11 @@
                     <span th:if="${user.email == null}" th:text="'unknown email'" class="value"></span>
                     <span th:unless="${user.email == null}" th:text="${user.email}" class="value"></span>
                 </div>
+                <div class="item">
+                    <span class="label">Rice</span>
+                    <span th:if="${user.rice == null}" th:text="'no rice data'" class="value"></span>
+                    <span th:unless="${user.rice == null}" th:text="${user.rice}" class="value"></span>
+                </div>
             </div>
             <div class="skills">
                 <span th:if="${user.about == null}" th:text="'unknown about data'" class="value"></span>

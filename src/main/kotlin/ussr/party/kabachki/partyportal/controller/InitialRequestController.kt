@@ -7,41 +7,34 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import ussr.party.kabachki.partyportal.dto.InitialRequestDTO
 import ussr.party.kabachki.partyportal.dto.User
-import ussr.party.kabachki.partyportal.entity.InitialRequestEntity
-import ussr.party.kabachki.partyportal.repository.InitialRequestRepository
+import ussr.party.kabachki.partyportal.service.InitialRequestService
+import ussr.party.kabachki.partyportal.service.UserService
 
 @Controller
 @RequestMapping("/initial-request")
 class InitialRequestController(
-    private val initialRequestRepository: InitialRequestRepository
+    private val initialRequestService: InitialRequestService,
+    private val userService: UserService
 ) : SessionAttributeController {
 
     @RequestMapping(path = ["", "/", "index", "index.html"])
-    fun indexHandler(
-        model: Model,
-        @ModelAttribute("user")
-        user: User
-    ): String {
-        model.addAttribute("initialRequest", InitialRequestDTO(initiator = user.name))
+    fun requestHandler(
+        model: Model
+    ): String = model.initializeNewRequestAttribute()
+        .addRequestsAttribute(initialRequestService)
+        .moveNextOrGoHome("initial-request/index.html")
 
-        return model.moveNextOrGoHome("initial-request/index.html")
-    }
 
     @PostMapping("/new")
     fun createRequest(
-        @ModelAttribute
-        initialRequestDTO: InitialRequestDTO
+        @ModelAttribute("initialRequest")
+        initialRequestDTO: InitialRequestDTO,
+        @ModelAttribute("user")
+        user: User,
+        model: Model
     ): String {
-        with(initialRequestDTO) {
-            initialRequestRepository.save(
-                InitialRequestEntity(
-                    initiator = initiator,
-                    requestTitle = requestTitle,
-                    description = description
-                )
-            )
-        }
+        initialRequestService.saveRequest(initialRequestDTO, user)
 
-        return "index"
+        return model.updateUserAttribute(userService).moveNextOrGoHome("index")
     }
 }

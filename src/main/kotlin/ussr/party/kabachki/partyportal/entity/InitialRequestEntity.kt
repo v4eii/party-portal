@@ -1,6 +1,7 @@
 package ussr.party.kabachki.partyportal.entity
 
 import javax.persistence.Entity
+import javax.persistence.Lob
 import javax.persistence.Table
 import javax.validation.constraints.NotBlank
 
@@ -11,6 +12,7 @@ data class InitialRequestEntity(
     var initiator: String,
     @NotBlank
     var requestTitle: String? = null,
+    @Lob
     @NotBlank
     var description: String? = null
 ) : BasedEntity()
