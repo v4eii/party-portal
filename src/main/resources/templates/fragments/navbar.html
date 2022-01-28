@@ -7,6 +7,7 @@
     <title>NavBar</title>
 </head>
 <!--/*@thymesVar id="user" type="ussr.party.kabachki.partyportal.dto.User"*/-->
+<!--/*@thymesVar id="weather" type="ussr.party.kabachki.partyportal.dto.WeatherDTO"*/-->
 <!--TODO!!-->
 <div class="navBar">
     <p class="site-tag">Party of Cobachki<br/>Java edition</p>
@@ -14,9 +15,10 @@
         <li><a class="active" th:href="@{/index.html}" href="#">Home</a></li>
         <li><a th:href="@{/initial-request/index.html}" href="#">Initial requests</a></li>
         <li><a>Contact</a></li>
+        <li><a th:href="@{/about/index.html}" href="#">About</a></li>
 
-        <li><a class="right" th:href="@{/about/index.html}" href="#">About</a></li>
         <li><a class="right" th:href="@{/profile/index.html}" th:text="${user?.name}" href="#">Profile</a></li>
+        <li><p class="right" th:text="${weather?.main?.temp} + '℃'">Weather</p></li>
     </ul>
 </div>
 

@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: h2
+  weather:
+    key: 508dff1acdabb7268e658e51914a2567
+#    http://api.openweathermap.org/data/2.5/weather?q=Voronezh&appid=508dff1acdabb7268e658e51914a2567
 
 ---
 #logging:
