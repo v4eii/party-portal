@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Request</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/inputField.css}" href="../../static/css/inputField.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/initialRequest.css}"
+          href="../../static/css/initialRequest.css">
 </head>
 
 <!--/*@thymesVar id="initialRequest" type="ussr.party.kabachki.partyportal.dto.InitialRequestDTO"*/-->
+<!--/*@thymesVar id="req" type="ussr.party.kabachki.partyportal.dto.InitialRequestDTO"*/-->
 
 <body>
 <div th:insert="~{fragments/navbar}" class="row"></div>
 <div>
     <h2>Initial request</h2>
-    <form th:object="${initialRequest}" method="post" action="new">
-        <div class="form-group has-feedback">
-            <input th:replace="~{fragments/inputField :: input ('Initiator', 'initiator', 'disabledtext')}"/>
-            <input th:replace="~{fragments/inputField :: input ('Title', 'requestTitle', 'text')}"/>
-            <input th:replace="~{fragments/inputField :: input ('Description', 'description', 'textarea')}"/>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn" type="submit" th:text="'Submit'"></button>
+    <table>
+        <form th:object="${initialRequest}" method="post" action="new">
+            <div class="form-group has-feedback">
+                <input th:replace="~{fragments/inputField :: input ('Initiator', 'initiator', 'text')}"/>
+                <input th:replace="~{fragments/inputField :: input ('Title', 'requestTitle', 'text')}"/>
+                <input th:replace="~{fragments/inputField :: input ('Description', 'description', 'textarea')}"/>
             </div>
-        </div>
-    </form>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn" type="submit" th:text="'Submit'"></button>
+                </div>
+            </div>
+        </form>
+    </table>
+    <div style="margin-left: 15px" th:if="${!#lists.isEmpty(requests)}">
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Initiator</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each="req : ${requests}">
+                <td th:text="${req.requestTitle}">title</td>
+                <td th:text="${req.initiator}">initiator</td>
+                <td class="last" th:text="${req.description}">asdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzasdzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</td>
+            </tr>
+        </table>
+    </div>
 </div>
 </body>
 </html>
