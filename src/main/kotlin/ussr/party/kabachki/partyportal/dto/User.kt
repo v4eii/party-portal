@@ -17,5 +17,6 @@ data class User(
     val age: Int,
     val weight: Int?,
     val height: Int?,
-    val about: String?
+    val about: String?,
+    val password: String? = null
 )
